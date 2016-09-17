@@ -1,3 +1,4 @@
+<?php $ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-php ?>
 <!DOCTYPE html>
  
 <html lang="en">
