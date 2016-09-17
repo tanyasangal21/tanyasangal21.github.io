@@ -1,1 +1,8 @@
-
+{
+    "name": "sencha/touch",
+	"type": "lybrary",
+	"description": "Sencha Touch",
+    "keywords": ["extjs", "ext js", "touch", "sencha"],
+    "homepage": "http://www.sencha.com/products/touch/",
+	"license": "MIT"
+}
