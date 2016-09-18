@@ -4,13 +4,50 @@ $ git add composer.json
 $ git commit -m "add composer.json for PHP app detection"
 
 $ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-php ?>
-<!DOCTYPE html>
- 
-<html lang="en">
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-      body
-        {
+<?php
+include_once 'dbconfig.php';
+?>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+   
+
+$(document).ready(function()
+{
+	$(".state").change(function()
+	{
+		
+		var name=$(this).val();
+		var dataString = 'name='+ name;
+		$(".city").find('option').remove();
+		
+		$.ajax
+		({
+			type: "POST",
+			url: "get_city.php",
+			data: dataString,
+			cache: false,
+			success: function(html)
+			{
+				
+				$(".city").html(html);
+			} 
+		});
+	});
+	
+	
+	
+	
+});
+</script>
+<style>
+body
+{
 position: fixed;
   left: 0;
   right: 0;
@@ -40,9 +77,12 @@ function setbg(color)
 document.getElementById("styled").style.background=color
 }
 </script>
+
 </head>
 <body  >
 
+    
+    
 <div class="container-fluid"  >
         <div class="row" style="background-color:white; border:2px black solid; margin-left:10%; margin-right:10% ; margin-top:-5%" >
     	<div class="col-sm-1 "></div>
@@ -66,9 +106,25 @@ document.getElementById("styled").style.background=color
 		                                                  <div class="row" ></div>
         <div style="border:2px black groove; padding-bottom:2%; margin-left:2%; margin-right:11%" class="row"><h3>State/District</h2>
   <div class="col-sm-6">
-      <b> State:  </b> <input >
+      <b> State:  </b>  <select name="state" class="state">
+
+      <option selected="selected">--Select State--</option>
+<?php
+	$stmt = $DB_con->prepare("SELECT * FROM state");
+	$stmt->execute();
+	while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+	{
+		?>
+        <option value="<?php echo $row['state_name']; ?>"><?php echo $row['state_name']; ?></option>
+        <?php
+	} 
+?>
+</select>
+
       <br><br>
-      <b>City:</b> <input style="margin:1%">
+      <b>City:</b> <select name="city" class="city">
+<option selected="selected">--Select City--</option>
+</select>
   </div>
   <div class="col-sm-6">
       <b>Sector :  </b> <input  >
