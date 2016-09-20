@@ -79,7 +79,7 @@ document.getElementById("styled").style.background=color
         <div class="col-sm-6 ">
             <q style=" font-style: italic; font-size:35px; margin-top:20px;">There is no higher religion than human service. To work for the common good is the greatest creed.</q>
         
-           <img src="logo.jpg" style="width:500px;height:300px">
+           <img src="logo.jpg" style="width:90%;height:300px">
         
         </div>
         <div class="col-sm-6 ">
