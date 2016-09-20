@@ -6,22 +6,27 @@ $ git commit -m "add composer.json for PHP app detection"
 $ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-php ?>
 
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<?php
-include_once 'dbconfig.php';
+    <?php
+include 'Dbconfig.php';
 ?>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="tanya.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
-<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
    
 
 $(document).ready(function()
 {
+	
 	$(".state").change(function()
 	{
-		
 		var name=$(this).val();
 		var dataString = 'name='+ name;
 		$(".city").find('option').remove();
@@ -45,25 +50,8 @@ $(document).ready(function()
 	
 });
 </script>
-<style>
-body
-{
-position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  display: block;
-background: url('background.jpg') no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;    
- 
-        }
-        .container-fluid
-        {
-            padding:10%
-        }
+    <style>
+      
     </style>
   <title>NGO</title>
   <meta charset="utf-8">
@@ -79,36 +67,59 @@ document.getElementById("styled").style.background=color
 </script>
 
 </head>
-<body  >
-
+     
+<body style="background-color:black;">
     
+     
+     
+<div class="container-fluid"  id="box6">
     
-<div class="container-fluid"  >
-        <div class="row" style="background-color:white; border:2px black solid; margin-left:10%; margin-right:10% ; margin-top:-5%" >
-    	<div class="col-sm-1 "></div>
-            <div class="col-sm-11"><div class="row"><div class="col-sm-5 " style="margin-left:25%"><h1 style="font-family: 'Open Sans'; font-size:50px;">NGO directory</h1></div></div><br>
+   
+    <div class="row">
+        <div class="col-sm-6 ">
+            <q style=" font-style: italic; font-size:35px; margin-top:20px;">There is no higher religion than human service. To work for the common good is the greatest creed.</q>
+        
+           <img src="logo.jpg" style="width:500px;height:300px">
+        
+        </div>
+        <div class="col-sm-6 ">
+                <div class="container-fluid" >
+                <div class="row" style="  margin-left:10%;margin-top:-50px" >
+    	
+                    <div class="col-sm-12"><h1 style="font-family: 'Open Sans'; font-size:50px;align:centre">NGO directory</h1></div></div><br>                     
                   <h2>Search NGO</h2><br>
 	<form  method="POST" role="form">
 	 	<div class="form-group">
-    		<div class="col-sm-6">
+            <div class="container-fluid" >
+                <div class="row" style="margin-top:-70px">
+    		    <div class="col-sm-6">
        			<b>NGO name:</b>
 			                             
-        			<input></div>
+        			</div>
      		<div class="col-sm-5">
-			<b>NGO registration number:</b>
-		<input   ></div>
+			<b>NGO Id:</b>
+		</div>
   		 <div class="col-sm-1"></div>
    	 	</div>
+        <div class="row" style="margin-top:1%">
+                 <div class="col-sm-6">
+			                             
+        			<input id="styletextsignup"></div>
+            <div class="col-sm-5">
+			
+		<input  id="styletextsignup" ></div>
+                </div>
+                </div>
         
         
-		                                                  <div class="row" ></div>
-		                                                  &nbsp;
-		                                                  <div class="row" ></div>
-        <div style="border:2px black groove; padding-bottom:2%; margin-left:2%; margin-right:11%" class="row"><h3>State/District</h2>
-  <div class="col-sm-6">
-      <b> State:  </b>  <select name="state" class="state">
-
-      <option selected="selected">--Select State--</option>
+		                                                 
+            
+        <div class="row" style="margin-left:2%; margin-top:-10%;"><h3>State/District</h3>
+            <div class="col-sm-9" style="margin-left:5%;">
+            <b> State:  </b>  
+            <select id="styletextsignup" name="state" class="state" style="margin-left:8%;"><br>
+            <option selected="selected" >--Select State--</option>
+      
 <?php
 	$stmt = $DB_con->prepare("SELECT * FROM state");
 	$stmt->execute();
@@ -122,12 +133,15 @@ document.getElementById("styled").style.background=color
 </select>
 
       <br><br>
-      <b>City:</b> <select name="city" class="city">
+      <b>City:</b> <select name="city" class="city" id="styletextsignup" style="margin-left:10%;">
 <option selected="selected">--Select City--</option>
-</select>
+      </select>
+            <br>
+      <br>
+       <b>Sector :  </b> <input style="margin-left:4%;" id="styletextsignup">
   </div>
-  <div class="col-sm-6">
-      <b>Sector :  </b> <input  >
+  <div class="col-sm-3">
+      
   </div>
 </div>
         
@@ -135,18 +149,16 @@ document.getElementById("styled").style.background=color
 		                                                  &nbsp;
 		                                                  <div class="row" ></div>
  		                                                  
-        
+                                                        &nbsp;
         
 		<div class="form-group" style="margin-bottom:10%">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-1"><button type="button" class="btn btn-danger">Search</button></div>
+			<div class="col-sm-3"></div>
+			<div class="col-sm-2"><button type="button" class="btn btn-danger" id="btn" style="margin-left:15%">Search</button></div>
 			<div class="col-sm-7"></div>
 		</div>
 	</form>
  	</div>
-       </div>  
- 		                                                 
- </div> 
-		                                      
+</div>  
+</div>
 </body>
 </html>
