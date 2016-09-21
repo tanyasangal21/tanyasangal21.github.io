@@ -66,7 +66,7 @@ document.getElementById("styled").style.background=color
    
     <div class="row">
         <div class="col-sm-6 ">
-            <q style=" font-style: italic; font-size:35px; margin-top:20px;">There is no higher religion than human service. To work for the common good is the greatest creed.</q>
+            <q align="center" style=" font-style: italic; font-size:35px; margin-top:20px;color:#558C89;">There is no higher religion than human service. To work for the common good is the greatest creed.</q>
         
            <img src="logo.jpg" style="width:90%;height:300px">
         
@@ -83,21 +83,16 @@ document.getElementById("styled").style.background=color
                 <div class="row" style="margin-top:-70px">
     		    <div class="col-sm-6">
        			<b>NGO name:</b>
+                    <input id="styletextsignup" class="name" name="name">
 			                             
         			</div>
      		<div class="col-sm-5">
 			<b>NGO Id:</b>
+                <input  id="styletextsignup" class="id" name="id" >
 		</div>
   		 <div class="col-sm-1"></div>
    	 	</div>
-        <div class="row" style="margin-top:1%">
-                 <div class="col-sm-6">
-			                             
-        			<input id="styletextsignup" class="name" name="name"></div>
-            <div class="col-sm-5">
-			
-		<input  id="styletextsignup" class="id" name="id" ></div>
-                </div>
+        
                 </div>
         
         
@@ -106,7 +101,7 @@ document.getElementById("styled").style.background=color
         <div class="row" style="margin-left:2%; margin-top:-10%;"><h3>State/District</h3>
             <div class="col-sm-9" style="margin-left:5%;">
             <b> State:  </b>  
-            <select id="styletextsignup" name="state" class="state" style="margin-left:8%;"><br>
+            <select id="styletextsignup" name="state" class="state" style="margin-left:8%;width:250px;"><br>
             <option selected="selected" >--Select State--</option>
       
 <?php
@@ -122,12 +117,31 @@ document.getElementById("styled").style.background=color
 </select>
 
       <br><br>
-      <b>City:</b> <select name="city" class="city" id="styletextsignup"  style="margin-left:10%;">
+      <b>City:</b> <select name="city" class="city" id="styletextsignup"  style="margin-left:10%;width:250px;">
 <option selected="selected">--Select City--</option>
       </select>
             <br>
       <br>
-       <b>Sector :  </b> <input style="margin-left:4%;" id="styletextsignup">
+       <b>Sector :  </b>
+                <select id="styletextsignup" name="sector" class="sector" style="margin-left:4%;width:250px;"><br>
+                    <option selected="selected" >--Select Sector--</option>
+                    <option >Civic Issues</option>
+                    <option >Art & Culture</option>
+                    <option >Animal Husbandry</option>
+                    <option >Dairying & Fisheries</option>
+                    <option >Health & Family Welfare</option>
+                    <option  > Rural Development & Poverty Alleviation</option>
+                    <option>Science & Technology</option>
+                    <option>Sports</option>
+                    <option>Tribal Affairs</option>
+                    <option> Urban Development & Poverty Alleviation</option>
+                    <option>Vocational Training</option>
+                    <option>Women's Development & Empowerment</option>
+                    <option>Youth Affairs</option>
+                    <option>Any Other</option>
+                    
+                
+                </select>
   </div>
   <div class="col-sm-3">
       
@@ -142,7 +156,7 @@ document.getElementById("styled").style.background=color
         
 		<div class="form-group" style="margin-bottom:10%">
 			<div class="col-sm-3"></div>
-			<div class="col-sm-2"><input type='button' value='search' class="btn btn-danger" id="btn" onclick='search()' style="margin-left:15%"></div>
+			<div class="col-sm-2"><input type='button' value='search' class="btn btn-danger" id="btn" onclick='search()' style="margin-left:35%"></div>
 			<div class="col-sm-7"></div>
 		</div>
 	</form>
@@ -150,19 +164,13 @@ document.getElementById("styled").style.background=color
 </div>  
 </div>
         <script> 
-function search() {
+function search() 
+{
 var input1 = document.forms["Form"]["city"].value;
 var input2 = document.forms["Form"]["name"].value;
 var input3 =document.forms["Form"]["id"].value;
+var input4 = document.forms["Form"]["sector"].value;
 var xhttp;
- 
-    if ( input1== "" ) {
-   document.getElementById("result").innerHTML = "";
-   return;
-    }
-          
-    else {
-          
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -170,9 +178,9 @@ var xhttp;
     }
   };
          
-  xhttp.open("GET", "get_ngo_bycity.php?city="+input1+"&name="+input2+"&id="+input3, true);
+  xhttp.open("GET", "get_ngo_bycity.php?city="+input1+"&name="+input2+"&id="+input3+"&sector="+input4, true);
   xhttp.send();
-          }
+          
           
 
           
