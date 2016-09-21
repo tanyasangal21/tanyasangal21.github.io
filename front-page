@@ -174,18 +174,7 @@ var xhttp;
   xhttp.send();
           }
           
-      /*  else if(input2 != null && !input2.isEmpty())
-          {
-  xhttp.open("GET", "get_ngo_byname.php?q="+input2, true);
-  xhttp.send();
-          }
-          
-          else if(input3 != null && !input3.isEmpty())
-          {
-  xhttp.open("GET", "get_ngo_byid.php?q="+input3, true);
-  xhttp.send();
-          }
-          */
+
           
 }
     
