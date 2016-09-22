@@ -8,7 +8,7 @@ if($_POST['name'])
 	
 	$stmt = $DB_con->prepare("SELECT * FROM cities WHERE city_state='$id'");
 	$stmt->execute(array(':name' => $name));
-	?><option selected="selected">Select City :</option>
+	?><option selected="selected">--Select City--</option>
 	<?php while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 	{
 		?>
