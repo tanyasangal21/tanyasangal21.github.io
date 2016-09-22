@@ -13,8 +13,6 @@ Import the database
 
 - Login using "root" as username and null as password
 
-- Enter "dmas_ui" for username, select 'localhost' as Host and enter a password u like 
-
 - Press Go at the bottom of the page
 
 - Download the dbcountries.sql (from git repo) on your machine and Import it into the database with name "dbcountires" on local machine.
