@@ -56,14 +56,14 @@ if(( $str=='--Select City--' || empty($str)) && ($str4!='--Select Sector--' && i
 	}
    if(isset($str2) && empty($str3))
             {
-         echo "hello";
+    
 		$sql = "SELECT * FROM ngo where name='".$str2."' and sector like '%$str4%'";	
 	}
     if(empty($str2) && isset($str3) ){
 		$sql = "SELECT * FROM ngo where  id='".$str3."' and sector like '%$str4%'";	
 	}
     if(empty($str2) && empty($str3)){
-        echo "hello";
+        
 		$sql = "SELECT * FROM ngo where sector like '%$str4%'";	
 	}
 }
