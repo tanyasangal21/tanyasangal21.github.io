@@ -78,14 +78,14 @@ if(( $str=='--Select City--' || empty($str)) && ($str4=='--Select Sector--' || e
 	}
    if(isset($str2) && empty($str3))
             {
-         
+     
 		$sql = "SELECT * FROM ngo where name='".$str2."'";	
 	}
     if(empty($str2) && isset($str3) ){
 		$sql = "SELECT * FROM ngo where  id='".$str3."'";	
 	}
     if(empty($str2) && empty($str3)){
-        
+       
 		$sql = "SELECT * FROM ngo where sector like '%$str4%'";	
 	}
 }
@@ -103,6 +103,7 @@ if(( $str=='--Select City--' || empty($str)) && ($str4=='--Select Sector--' || e
 		echo'<th style=" background-color: #558C89;color: white; text-align:center;padding: 10px;">Name</th>';
 		echo'<th style=" background-color: #558C89;color: white; text-align:center;padding: 10px;">Address</th>';
         echo'<th style=" background-color: #558C89;color: white; text-align:center;padding: 10px;">Sector</th>';
+        echo'<th style=" background-color: #558C89;color: white; text-align:center;padding: 10px;">city/State</th>';
 		
 	 echo'</tr>';
 while($row = mysqli_fetch_assoc($result)) {
@@ -111,6 +112,7 @@ while($row = mysqli_fetch_assoc($result)) {
 			echo'<td style="border-bottom: 1px solid #ddd;border-bottom: 1px solid #558C89 ; padding: 10px;">'.$row['name'].'</td>';
 			echo'<td style="border-bottom: 1px solid #ddd;border-bottom: 1px solid #558C89 ; padding: 10px;">'.$row['address'].'</td>';
 			echo'<td style="border-bottom: 1px solid #ddd;border-bottom: 1px solid #558C89 ; padding: 10px;">'.$row['sector'].'</td>';
+            echo'<td style="border-bottom: 1px solid #ddd;border-bottom: 1px solid #558C89 ; padding: 10px;">'.$row['city'].'</td>';
 		echo '</tr>';
 }
 }  
