@@ -10,8 +10,7 @@
 ###Clone the repo
 ```
 https://github.com/tanyasangal21/f22.git 
-```
-    in location c://wamp/www/
+```and extract files in location-> c://wamp/www/
 
 ###
 Import the database
