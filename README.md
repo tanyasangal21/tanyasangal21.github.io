@@ -13,8 +13,7 @@ https://github.com/tanyasangal21/f22.git
 ```
 and extract files in location-> c://wamp/www/
 
-###
-Import the database
+###Import the database
 
 - Open localhost/phpmyadmin on your local machine 
 
@@ -22,10 +21,19 @@ Import the database
 
 - Press Go at the bottom of the page
 
-- Download the dbcountries.sql (from git repo) on your machine and Import it into the database with name "dbcountires" on local machine.
+- Select "Import" option present at the top and choose the database dbcountries.sql from c://wamp/www/f22-master 
+
+- Select format as SQL and SQL compatibility mode as NONE.
+
+- Press GO button present at the bottom.
+
+- The database will appear on the left corner.
+
 
 ###Get started
 
 - Open web browser
  
-- Enter URL localhost/"file location"/front-page.php
+- Enter URL localhost/f22-master/front-page.php
+
+- Search for the NGO.
