@@ -65,7 +65,7 @@ document.getElementById("styled").style.background=color
     
    
     <div class="row">
-        <div class="col-sm-6 ">
+        <div class="col-sm-4 ">
             
         
             <img src="collage.jpg" style="height:300px; width:100%">
@@ -73,7 +73,7 @@ document.getElementById("styled").style.background=color
              <img src="4.jpg" style="width:42%;height:200px;margin-top:1%;">
          <img src="3.jpg" style="width:57%;height:200px;margin-top:1%;">
         </div>
-        <div class="col-sm-6 " id="result">
+        <div class="col-sm-8 " id="result">
                 <div class="container-fluid" >
                 <div class="row" style="  margin-left:10%;margin-top:-50px" >
     	
