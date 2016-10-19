@@ -65,13 +65,10 @@ document.getElementById("styled").style.background=color
     
    
     <div class="row">
-        <div class="col-sm-4 ">
-            
-        
+        <div class="col-sm-4">
             <img src="collage.jpg" style="height:300px; width:100%">
-            
-             <img src="4.jpg" style="width:42%;height:200px;margin-top:1%;">
-         <img src="3.jpg" style="width:57%;height:200px;margin-top:1%;">
+            <img src="4.jpg" style="width:42%;height:200px;margin-top:1%;">
+            <img src="3.jpg" style="width:56%;height:200px;margin-top:1%;">
         </div>
         <div class="col-sm-8 " id="result">
                 <div class="container-fluid" >
@@ -84,12 +81,12 @@ document.getElementById("styled").style.background=color
             <div class="container-fluid" >
                 <div class="row" style="margin-top:-70px">
     		    <div class="col-sm-6">
-       			<b>NGO name:</b>
+                    <b>NGO name:</b></br>
                     <input id="styletextsignup" class="name" name="name">
 			                             
         			</div>
-     		<div class="col-sm-5">
-			<b>NGO Id:</b>
+     		<div class="col-sm-5" >
+			<b>NGO Id:  </b>
                 <input  id="styletextsignup" class="id" name="id" >
 		</div>
   		 <div class="col-sm-1"></div>
